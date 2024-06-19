@@ -1,4 +1,4 @@
-function [overhead, t, JD] = ProbErrorCancelOS(Noise_channel, O, varargin)
+function [overhead, t, JD] = ProbErrorCancelOS(Noise_channel, O)
     % Provide a CPTP map to inverse the Noise_channel with respect to observable :math:`O`
     % with the method called observable shift.
     %
@@ -45,5 +45,5 @@ cvx_begin sdp quiet
 
 cvx_end
 overhead = cost;
-JD = JD;
+JD = JD/overhead;
 t = t;
