@@ -1,1 +1,2 @@
-docs/**/**/
+# 忽略 docs/api 下的所有文件夹
+docs/api/*/
