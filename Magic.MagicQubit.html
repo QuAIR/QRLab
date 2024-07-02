@@ -1,0 +1,1424 @@
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="_static/favicon.svg">
+    
+    
+      
+        <title>Magic.MagicQubit - QRLab</title>
+      
+    
+    
+      
+        
+        
+          
+          
+          <meta name="theme-color" content="#ffa724">
+        
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+        <link rel="stylesheet" type="text/css" href="_static/sphinx_immaterial_theme.e0b5691b38cca82da.min.css?v=b1736040" />
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="orange" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#Magic.MagicQubit.Pauli2Stab" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="QRLab" class="md-header__button md-logo" aria-label="QRLab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            QRLab
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Magic.MagicQubit
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/QuAIR/QRLab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    QRLab
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="QRLab" class="md-nav__button md-logo" aria-label="QRLab" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+    </a>
+    QRLab
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/QuAIR/QRLab" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    QRLab
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Coherence.html" class="md-nav__link">
+        <span class="md-ellipsis">Coherence</span>
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Entanglement.html" class="md-nav__link">
+        <span class="md-ellipsis">Entanglement</span>
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+        
+        <div class="md-nav__link md-nav__link--index ">
+          <a href="Magic.html"><span class="md-ellipsis">Magic</span></a>
+          
+            <label for="__nav_3">
+              <span class="md-nav__icon md-icon"></span>
+            </label>
+          
+        </div>
+      
+      <nav class="md-nav" aria-label="Magic" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          <span class="md-ellipsis">Magic</span>
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          <span class="md-ellipsis">Magic.<wbr>Magic<wbr>Qubit</span>
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="#" class="md-nav__link md-nav__link--active">
+        <span class="md-ellipsis">Magic.<wbr>Magic<wbr>Qubit</span>
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Pauli2Stab" class="md-nav__link">
+    <span title="Magic.MagicQubit.Pauli2Stab (MATLAB function)" class="md-ellipsis">Magic.<wbr>Magic<wbr>Qubit.<wbr>Pauli2Stab</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Magic.MagicQubit.Pauli2Stab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Pauli2Stab-required-packages" class="md-nav__link">
+    <span class="md-ellipsis">Required packages</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Pauli2Stab-parameters" class="md-nav__link">
+    <span class="md-ellipsis">Parameters</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Pauli2Stab-returns" class="md-nav__link">
+    <span class="md-ellipsis">Returns</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Pauli2Stab-return-type" class="md-nav__link">
+    <span class="md-ellipsis">Return type</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Pauli2Stab-raises" class="md-nav__link">
+    <span class="md-ellipsis">Raises</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Pauli2Stab-examples" class="md-nav__link">
+    <span class="md-ellipsis">Examples</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.QubitHstate" class="md-nav__link">
+    <span title="Magic.MagicQubit.QubitHstate (MATLAB function)" class="md-ellipsis">Magic.<wbr>Magic<wbr>Qubit.<wbr>Qubit<wbr>Hstate</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Magic.MagicQubit.QubitHstate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.QubitHstate-returns" class="md-nav__link">
+    <span class="md-ellipsis">Returns</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.QubitHstate-return-type" class="md-nav__link">
+    <span class="md-ellipsis">Return type</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.QubitTstate" class="md-nav__link">
+    <span title="Magic.MagicQubit.QubitTstate (MATLAB function)" class="md-ellipsis">Magic.<wbr>Magic<wbr>Qubit.<wbr>Qubit<wbr>Tstate</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Magic.MagicQubit.QubitTstate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.QubitTstate-returns" class="md-nav__link">
+    <span class="md-ellipsis">Returns</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.QubitTstate-return-type" class="md-nav__link">
+    <span class="md-ellipsis">Return type</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RandomCSPO" class="md-nav__link">
+    <span title="Magic.MagicQubit.RandomCSPO (MATLAB function)" class="md-ellipsis">Magic.<wbr>Magic<wbr>Qubit.<wbr>Random<wbr>CSPO</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Magic.MagicQubit.RandomCSPO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RandomCSPO-parameters" class="md-nav__link">
+    <span class="md-ellipsis">Parameters</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RandomCSPO-returns" class="md-nav__link">
+    <span class="md-ellipsis">Returns</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RandomCSPO-return-type" class="md-nav__link">
+    <span class="md-ellipsis">Return type</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RandomCSPO-raises" class="md-nav__link">
+    <span class="md-ellipsis">Raises</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RandomCSPO-examples" class="md-nav__link">
+    <span class="md-ellipsis">Examples</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RoM_Chan" class="md-nav__link">
+    <span title="Magic.MagicQubit.RoM_Chan (MATLAB function)" class="md-ellipsis">Magic.<wbr>Magic<wbr>Qubit.<wbr>Ro<wbr>M_<wbr>Chan</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Magic.MagicQubit.RoM_Chan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RoM_Chan-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">Dependencies</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RoM_Chan-parameters" class="md-nav__link">
+    <span class="md-ellipsis">Parameters</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RoM_Chan-returns" class="md-nav__link">
+    <span class="md-ellipsis">Returns</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RoM_Chan-return-type" class="md-nav__link">
+    <span class="md-ellipsis">Return type</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RoM_Chan-raises" class="md-nav__link">
+    <span class="md-ellipsis">Raises</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RobMag" class="md-nav__link">
+    <span title="Magic.MagicQubit.RobMag (MATLAB function)" class="md-ellipsis">Magic.<wbr>Magic<wbr>Qubit.<wbr>Rob<wbr>Mag</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Magic.MagicQubit.RobMag">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RobMag-parameters" class="md-nav__link">
+    <span class="md-ellipsis">Parameters</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RobMag-returns" class="md-nav__link">
+    <span class="md-ellipsis">Returns</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RobMag-return-type" class="md-nav__link">
+    <span class="md-ellipsis">Return type</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RobMag-raises" class="md-nav__link">
+    <span class="md-ellipsis">Raises</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Stabilizer_Renyi_Entropy" class="md-nav__link">
+    <span title="Magic.MagicQubit.Stabilizer_Renyi_Entropy (MATLAB function)" class="md-ellipsis">Magic.<wbr>Magic<wbr>Qubit.<wbr>Stabilizer_<wbr>Renyi_<wbr>Entropy</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Magic.MagicQubit.Stabilizer_Renyi_Entropy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Stabilizer_Renyi_Entropy-parameters" class="md-nav__link">
+    <span class="md-ellipsis">Parameters</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Stabilizer_Renyi_Entropy-returns" class="md-nav__link">
+    <span class="md-ellipsis">Returns</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Stabilizer_Renyi_Entropy-return-type" class="md-nav__link">
+    <span class="md-ellipsis">Return type</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Stabilizer_Renyi_Entropy-raises" class="md-nav__link">
+    <span class="md-ellipsis">Raises</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Trans_K" class="md-nav__link">
+    <span title="Magic.MagicQubit.Trans_K (MATLAB function)" class="md-ellipsis">Magic.<wbr>Magic<wbr>Qubit.<wbr>Trans_<wbr>K</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Magic.MagicQubit.Trans_K">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Trans_K-parameters" class="md-nav__link">
+    <span class="md-ellipsis">Parameters</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Trans_K-returns" class="md-nav__link">
+    <span class="md-ellipsis">Returns</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Trans_K-return-type" class="md-nav__link">
+    <span class="md-ellipsis">Return type</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Trans_K-raises" class="md-nav__link">
+    <span class="md-ellipsis">Raises</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Magic.MagicQudit.html" class="md-nav__link">
+        <span class="md-ellipsis">Magic.<wbr>Magic<wbr>Qudit</span>
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="QuasiTheory.html" class="md-nav__link">
+        <span class="md-ellipsis">Quasi<wbr>Theory</span>
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="Supermap.html" class="md-nav__link">
+        <span class="md-ellipsis">Supermap</span>
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="seesaw.html" class="md-nav__link">
+        <span class="md-ellipsis">seesaw</span>
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tutorials.html" class="md-nav__link">
+        <span class="md-ellipsis">tutorials</span>
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="utils.html" class="md-nav__link">
+        <span class="md-ellipsis">utils</span>
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Pauli2Stab" class="md-nav__link">
+    <span title="Magic.MagicQubit.Pauli2Stab (MATLAB function)" class="md-ellipsis">Magic.<wbr>Magic<wbr>Qubit.<wbr>Pauli2Stab</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Magic.MagicQubit.Pauli2Stab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Pauli2Stab-required-packages" class="md-nav__link">
+    <span class="md-ellipsis">Required packages</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Pauli2Stab-parameters" class="md-nav__link">
+    <span class="md-ellipsis">Parameters</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Pauli2Stab-returns" class="md-nav__link">
+    <span class="md-ellipsis">Returns</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Pauli2Stab-return-type" class="md-nav__link">
+    <span class="md-ellipsis">Return type</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Pauli2Stab-raises" class="md-nav__link">
+    <span class="md-ellipsis">Raises</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Pauli2Stab-examples" class="md-nav__link">
+    <span class="md-ellipsis">Examples</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.QubitHstate" class="md-nav__link">
+    <span title="Magic.MagicQubit.QubitHstate (MATLAB function)" class="md-ellipsis">Magic.<wbr>Magic<wbr>Qubit.<wbr>Qubit<wbr>Hstate</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Magic.MagicQubit.QubitHstate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.QubitHstate-returns" class="md-nav__link">
+    <span class="md-ellipsis">Returns</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.QubitHstate-return-type" class="md-nav__link">
+    <span class="md-ellipsis">Return type</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.QubitTstate" class="md-nav__link">
+    <span title="Magic.MagicQubit.QubitTstate (MATLAB function)" class="md-ellipsis">Magic.<wbr>Magic<wbr>Qubit.<wbr>Qubit<wbr>Tstate</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Magic.MagicQubit.QubitTstate">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.QubitTstate-returns" class="md-nav__link">
+    <span class="md-ellipsis">Returns</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.QubitTstate-return-type" class="md-nav__link">
+    <span class="md-ellipsis">Return type</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RandomCSPO" class="md-nav__link">
+    <span title="Magic.MagicQubit.RandomCSPO (MATLAB function)" class="md-ellipsis">Magic.<wbr>Magic<wbr>Qubit.<wbr>Random<wbr>CSPO</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Magic.MagicQubit.RandomCSPO">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RandomCSPO-parameters" class="md-nav__link">
+    <span class="md-ellipsis">Parameters</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RandomCSPO-returns" class="md-nav__link">
+    <span class="md-ellipsis">Returns</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RandomCSPO-return-type" class="md-nav__link">
+    <span class="md-ellipsis">Return type</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RandomCSPO-raises" class="md-nav__link">
+    <span class="md-ellipsis">Raises</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RandomCSPO-examples" class="md-nav__link">
+    <span class="md-ellipsis">Examples</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RoM_Chan" class="md-nav__link">
+    <span title="Magic.MagicQubit.RoM_Chan (MATLAB function)" class="md-ellipsis">Magic.<wbr>Magic<wbr>Qubit.<wbr>Ro<wbr>M_<wbr>Chan</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Magic.MagicQubit.RoM_Chan">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RoM_Chan-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">Dependencies</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RoM_Chan-parameters" class="md-nav__link">
+    <span class="md-ellipsis">Parameters</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RoM_Chan-returns" class="md-nav__link">
+    <span class="md-ellipsis">Returns</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RoM_Chan-return-type" class="md-nav__link">
+    <span class="md-ellipsis">Return type</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RoM_Chan-raises" class="md-nav__link">
+    <span class="md-ellipsis">Raises</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RobMag" class="md-nav__link">
+    <span title="Magic.MagicQubit.RobMag (MATLAB function)" class="md-ellipsis">Magic.<wbr>Magic<wbr>Qubit.<wbr>Rob<wbr>Mag</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Magic.MagicQubit.RobMag">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RobMag-parameters" class="md-nav__link">
+    <span class="md-ellipsis">Parameters</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RobMag-returns" class="md-nav__link">
+    <span class="md-ellipsis">Returns</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RobMag-return-type" class="md-nav__link">
+    <span class="md-ellipsis">Return type</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.RobMag-raises" class="md-nav__link">
+    <span class="md-ellipsis">Raises</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Stabilizer_Renyi_Entropy" class="md-nav__link">
+    <span title="Magic.MagicQubit.Stabilizer_Renyi_Entropy (MATLAB function)" class="md-ellipsis">Magic.<wbr>Magic<wbr>Qubit.<wbr>Stabilizer_<wbr>Renyi_<wbr>Entropy</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Magic.MagicQubit.Stabilizer_Renyi_Entropy">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Stabilizer_Renyi_Entropy-parameters" class="md-nav__link">
+    <span class="md-ellipsis">Parameters</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Stabilizer_Renyi_Entropy-returns" class="md-nav__link">
+    <span class="md-ellipsis">Returns</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Stabilizer_Renyi_Entropy-return-type" class="md-nav__link">
+    <span class="md-ellipsis">Return type</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Stabilizer_Renyi_Entropy-raises" class="md-nav__link">
+    <span class="md-ellipsis">Raises</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Trans_K" class="md-nav__link">
+    <span title="Magic.MagicQubit.Trans_K (MATLAB function)" class="md-ellipsis">Magic.<wbr>Magic<wbr>Qubit.<wbr>Trans_<wbr>K</span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Magic.MagicQubit.Trans_K">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Trans_K-parameters" class="md-nav__link">
+    <span class="md-ellipsis">Parameters</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Trans_K-returns" class="md-nav__link">
+    <span class="md-ellipsis">Returns</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Trans_K-return-type" class="md-nav__link">
+    <span class="md-ellipsis">Return type</span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#Magic.MagicQubit.Trans_K-raises" class="md-nav__link">
+    <span class="md-ellipsis">Raises</span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset" role="main">
+                  
+
+
+<h1 id="magic-magicqubit">Magic.MagicQubit<a class="headerlink" href="#magic-magicqubit" title="Link to this heading">¶</a></h1>
+<div class="toctree-wrapper compound" id="module-Magic.MagicQubit">
+</div>
+<dl class="mat function objdesc">
+<dt class="sig sig-object highlight mat" id="Magic.MagicQubit.Pauli2Stab">
+<span class="sig-prename descclassname"><span class="pre">Magic.MagicQubit.</span></span><span class="sig-name descname"><span class="pre">Pauli2Stab</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">A_mat</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">n_qubit</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Magic.MagicQubit.Pauli2Stab" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd" id="Magic.MagicQubit.Pauli2Stab-required-packages">Required packages<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.Pauli2Stab-required-packages" title="Permalink to this headline">¶</a></dt>
+<dd class="field-odd"><p>channel_magic v2.0 <a class="reference external" href="https://github.com/jamesrseddon/channel_magic">https://github.com/jamesrseddon/channel_magic</a></p>
+</dd>
+</dl>
+<p>Convert Pauli representations of pure stabilizers in A_mat to stabilizer matrices:</p>
+<dl class="field-list">
+<dt class="field-odd" id="Magic.MagicQubit.Pauli2Stab-parameters">Parameters<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.Pauli2Stab-parameters" title="Permalink to this headline">¶</a></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>A_mat</strong> – Pauli representations of pure stabilizers from the package channel_magic v2.0.</p></li>
+<li><p><strong>n_qubit</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – Number of qubits.</p></li>
+</ul>
+</dd>
+<dt class="field-even" id="Magic.MagicQubit.Pauli2Stab-returns">Returns<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.Pauli2Stab-returns" title="Permalink to this headline">¶</a></dt>
+<dd class="field-even"><p>Stabilizer matrices where each column is a pure stabilizer state.</p>
+</dd>
+<dt class="field-odd" id="Magic.MagicQubit.Pauli2Stab-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.Pauli2Stab-return-type" title="Permalink to this headline">¶</a></dt>
+<dd class="field-odd"><p>numeric</p>
+</dd>
+<dt class="field-even" id="Magic.MagicQubit.Pauli2Stab-raises">Raises<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.Pauli2Stab-raises" title="Permalink to this headline">¶</a></dt>
+<dd class="field-even"><p><span><code class="xref mat mat-exc docutils literal notranslate"><span class="pre">error</span></code></span> – If the number of qubits does not match with the A_mat file provided, an error is raised.</p>
+</dd>
+<dt class="field-odd" id="Magic.MagicQubit.Pauli2Stab-examples">Examples<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.Pauli2Stab-examples" title="Permalink to this headline">¶</a></dt>
+<dd class="field-odd"><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><code><span class="n">A_mat_2</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">load</span><span class="p">(</span><span class="s">&#39;Amat2.mat&#39;</span><span class="p">);</span>
+<span class="n">Stab_Vec</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">Pauli2Stab</span><span class="p">(</span><span class="n">A_mat_2</span><span class="p">,</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<span class="c">% Convert Pauli representations of 2-qubit pure stabilizers in A_mat</span>
+<span class="c">% to stabilizer matrices.</span>
+</code></pre></div>
+</div>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="mat function objdesc">
+<dt class="sig sig-object highlight mat" id="Magic.MagicQubit.QubitHstate">
+<span class="sig-prename descclassname"><span class="pre">Magic.MagicQubit.</span></span><span class="sig-name descname"><span class="pre">QubitHstate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Magic.MagicQubit.QubitHstate" title="Link to this definition">¶</a></dt>
+<dd><p>Generate H state</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="Magic.MagicQubit.QubitHstate-returns">Returns<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.QubitHstate-returns" title="Permalink to this headline">¶</a></dt>
+<dd class="field-odd"><p>qubit H state.</p>
+</dd>
+<dt class="field-even" id="Magic.MagicQubit.QubitHstate-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.QubitHstate-return-type" title="Permalink to this headline">¶</a></dt>
+<dd class="field-even"><p>H (numeric)</p>
+</dd>
+</dl>
+<div class="note admonition">
+<p class="admonition-title">Note</p>
+<p>Emerson, J. (2014).
+The resource theory of stabilizer computation.
+Bulletin of the American Physical Society, 59.</p>
+</div>
+</dd></dl>
+
+<dl class="mat function objdesc">
+<dt class="sig sig-object highlight mat" id="Magic.MagicQubit.QubitTstate">
+<span class="sig-prename descclassname"><span class="pre">Magic.MagicQubit.</span></span><span class="sig-name descname"><span class="pre">QubitTstate</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Magic.MagicQubit.QubitTstate" title="Link to this definition">¶</a></dt>
+<dd><p>Generate qubit T state</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="Magic.MagicQubit.QubitTstate-returns">Returns<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.QubitTstate-returns" title="Permalink to this headline">¶</a></dt>
+<dd class="field-odd"><p>qubit T state.</p>
+</dd>
+<dt class="field-even" id="Magic.MagicQubit.QubitTstate-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.QubitTstate-return-type" title="Permalink to this headline">¶</a></dt>
+<dd class="field-even"><p>T (numeric)</p>
+</dd>
+</dl>
+<div class="note admonition">
+<p class="admonition-title">Note</p>
+<p>Emerson, J. (2014).
+The resource theory of stabilizer computation.
+Bulletin of the American Physical Society, 59.</p>
+</div>
+</dd></dl>
+
+<dl class="mat function objdesc">
+<dt class="sig sig-object highlight mat" id="Magic.MagicQubit.RandomCSPO">
+<span class="sig-prename descclassname"><span class="pre">Magic.MagicQubit.</span></span><span class="sig-name descname"><span class="pre">RandomCSPO</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">num_s</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Magic.MagicQubit.RandomCSPO" title="Link to this definition">¶</a></dt>
+<dd><p>Sampling num_s random qubit-qubit channels and sift the qubit-qubit
+CSPO.</p>
+<dl class="field-list">
+<dt class="field-odd" id="Magic.MagicQubit.RandomCSPO-parameters">Parameters<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.RandomCSPO-parameters" title="Permalink to this headline">¶</a></dt>
+<dd class="field-odd"><p><strong>num_s</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">int</span></code></span>) – The number of sampling random qubit-qubit channels.</p>
+</dd>
+<dt class="field-even" id="Magic.MagicQubit.RandomCSPO-returns">Returns<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.RandomCSPO-returns" title="Permalink to this headline">¶</a></dt>
+<dd class="field-even"><p>cell array containing the sift CSPO.</p>
+</dd>
+<dt class="field-odd" id="Magic.MagicQubit.RandomCSPO-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.RandomCSPO-return-type" title="Permalink to this headline">¶</a></dt>
+<dd class="field-odd"><p>numeric</p>
+</dd>
+<dt class="field-even" id="Magic.MagicQubit.RandomCSPO-raises">Raises<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.RandomCSPO-raises" title="Permalink to this headline">¶</a></dt>
+<dd class="field-even"><p><span><code class="xref mat mat-exc docutils literal notranslate"><span class="pre">error</span></code></span> – None.</p>
+</dd>
+<dt class="field-odd" id="Magic.MagicQubit.RandomCSPO-examples">Examples<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.RandomCSPO-examples" title="Permalink to this headline">¶</a></dt>
+<dd class="field-odd"><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><code><span class="n">Chois_CSPO_cell</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">RandomCSPO</span><span class="p">(</span><span class="mi">10000</span><span class="p">);</span>
+<span class="c">% Sampling 10000 random qubit-qubit channels and sift the qubit-qubit</span>
+<span class="c">% CSPO.</span>
+</code></pre></div>
+</div>
+</dd>
+</dl>
+<div class="note admonition">
+<p class="admonition-title">Note</p>
+<p>Wang, X., Wilde, M. M., &amp; Su, Y. (2019).
+Quantifying the magic of quantum channels.
+New Journal of Physics, 21(10), 103002.</p>
+</div>
+</dd></dl>
+
+<dl class="mat function objdesc">
+<dt class="sig sig-object highlight mat" id="Magic.MagicQubit.RoM_Chan">
+<span class="sig-prename descclassname"><span class="pre">Magic.MagicQubit.</span></span><span class="sig-name descname"><span class="pre">RoM_Chan</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">J</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">A_mat</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Magic.MagicQubit.RoM_Chan" title="Link to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd" id="Magic.MagicQubit.RoM_Chan-dependencies">Dependencies<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.RoM_Chan-dependencies" title="Permalink to this headline">¶</a></dt>
+<dd class="field-odd"><p>Trans_K
+findChoiCPTProbustness  from channel_magic v2.0 <a class="reference external" href="https://github.com/jamesrseddon/channel_magic">https://github.com/jamesrseddon/channel_magic</a></p>
+</dd>
+</dl>
+<div class="math notranslate nohighlight">
+\[\mathcal{R}_*(\mathcal{N}) := \min_{\mathcal{N}_{\pm} \in \text{CSPO}} \big\{ 2p+1: \mathcal{N}=(1+p)\mathcal{N}_+ - p \mathcal{N}_-, p\geq 0\big\}\]</div>
+<p>Compute the Channel robustness of a Choi matrix</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="Magic.MagicQubit.RoM_Chan-parameters">Parameters<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.RoM_Chan-parameters" title="Permalink to this headline">¶</a></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>J</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – Choi matrix of a quantum channel.</p></li>
+<li><p><strong>A_mat</strong> – Pauli representations of pure stabilizers form the package channel_magic v2.0.</p></li>
+</ul>
+</dd>
+<dt class="field-even" id="Magic.MagicQubit.RoM_Chan-returns">Returns<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.RoM_Chan-returns" title="Permalink to this headline">¶</a></dt>
+<dd class="field-even"><p>Channel robustness of the channel.</p>
+</dd>
+<dt class="field-odd" id="Magic.MagicQubit.RoM_Chan-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.RoM_Chan-return-type" title="Permalink to this headline">¶</a></dt>
+<dd class="field-odd"><p>numeric</p>
+</dd>
+<dt class="field-even" id="Magic.MagicQubit.RoM_Chan-raises">Raises<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.RoM_Chan-raises" title="Permalink to this headline">¶</a></dt>
+<dd class="field-even"><p><span><code class="xref mat mat-exc docutils literal notranslate"><span class="pre">error</span></code></span> – If dimension of channel does not match with the A_mat file provided, an error is raised.</p>
+</dd>
+</dl>
+<p>Note:
+Seddon, J. R., &amp; Campbell, E. T. (2019).
+Quantifying magic for multi-qubit operations.
+Proceedings of the Royal Society A, 475(2227), 20190251.</p>
+</dd></dl>
+
+<dl class="mat function objdesc">
+<dt class="sig sig-object highlight mat" id="Magic.MagicQubit.RobMag">
+<span class="sig-prename descclassname"><span class="pre">Magic.MagicQubit.</span></span><span class="sig-name descname"><span class="pre">RobMag</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">rho</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">Stab</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Magic.MagicQubit.RobMag" title="Link to this definition">¶</a></dt>
+<dd><p>From <a class="reference external" href="https://bartoszregula.me/code/magic">https://bartoszregula.me/code/magic</a></p>
+<div class="math notranslate nohighlight">
+\[\mathcal{R}(\rho) = \min_{\textbf{q}}\Big\{ \| \textbf{q} \|_1 \ :
+\rho=\sum_i q_i \ketbra{s_i}{s_i} \ , \ketbra{s_i}{s_i} \in \mathrm{STAB}_n \Big\},\]</div>
+<dl class="field-list simple">
+<dt class="field-odd" id="Magic.MagicQubit.RobMag-parameters">Parameters<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.RobMag-parameters" title="Permalink to this headline">¶</a></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rho</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – The density matrix of a n-qubit quantum state.</p></li>
+<li><p><strong>Stab</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – A matrix whose columns are pure stabilizer states.</p></li>
+</ul>
+</dd>
+<dt class="field-even" id="Magic.MagicQubit.RobMag-returns">Returns<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.RobMag-returns" title="Permalink to this headline">¶</a></dt>
+<dd class="field-even"><p>The robustness of magic states.</p>
+</dd>
+<dt class="field-odd" id="Magic.MagicQubit.RobMag-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.RobMag-return-type" title="Permalink to this headline">¶</a></dt>
+<dd class="field-odd"><p>numeric</p>
+</dd>
+<dt class="field-even" id="Magic.MagicQubit.RobMag-raises">Raises<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.RobMag-raises" title="Permalink to this headline">¶</a></dt>
+<dd class="field-even"><p><span><code class="xref mat mat-exc docutils literal notranslate"><span class="pre">error</span></code></span> – If the dimension of the input state does not match with the pure stabilizer state matrix, an error is raised.</p>
+</dd>
+</dl>
+<p>Note:
+Howard, M., &amp; Campbell, E. (2017).
+Application of a resource theory for magic states to fault-tolerant quantum computing.
+Physical review letters, 118(9), 090501.</p>
+</dd></dl>
+
+<dl class="mat function objdesc">
+<dt class="sig sig-object highlight mat" id="Magic.MagicQubit.Stabilizer_Renyi_Entropy">
+<span class="sig-prename descclassname"><span class="pre">Magic.MagicQubit.</span></span><span class="sig-name descname"><span class="pre">Stabilizer_Renyi_Entropy</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">rho</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">alpha</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Magic.MagicQubit.Stabilizer_Renyi_Entropy" title="Link to this definition">¶</a></dt>
+<dd><div class="math notranslate nohighlight">
+\[M_\alpha(\psi):=(1-\alpha)^{-1} \log \sum_{P \in \mathcal{P}_n} \Xi_P^\alpha(\psi)-\log d\]</div>
+<p>where <span class="math notranslate nohighlight">\(\Xi_P^\alpha(\psi) =d^{-1}\tr^2(P\psi)\)</span> and :math: <cite>mathcal{P}_n</cite> denotes the set of all n-qubit Pauli operators.</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="Magic.MagicQubit.Stabilizer_Renyi_Entropy-parameters">Parameters<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.Stabilizer_Renyi_Entropy-parameters" title="Permalink to this headline">¶</a></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>rho</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – The density matrix of a n-qubit quantum state.</p></li>
+<li><p><strong>alpha</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – alpha parameter.</p></li>
+</ul>
+</dd>
+<dt class="field-even" id="Magic.MagicQubit.Stabilizer_Renyi_Entropy-returns">Returns<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.Stabilizer_Renyi_Entropy-returns" title="Permalink to this headline">¶</a></dt>
+<dd class="field-even"><p>The Stabilizer Renyi Entropy of magic states.</p>
+</dd>
+<dt class="field-odd" id="Magic.MagicQubit.Stabilizer_Renyi_Entropy-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.Stabilizer_Renyi_Entropy-return-type" title="Permalink to this headline">¶</a></dt>
+<dd class="field-odd"><p>numeric</p>
+</dd>
+<dt class="field-even" id="Magic.MagicQubit.Stabilizer_Renyi_Entropy-raises">Raises<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.Stabilizer_Renyi_Entropy-raises" title="Permalink to this headline">¶</a></dt>
+<dd class="field-even"><p><span><code class="xref mat mat-exc docutils literal notranslate"><span class="pre">error</span></code></span> – If the input state is not a pure state, an error is raised.</p>
+</dd>
+</dl>
+<p>Note:
+Leone, L., Oliviero, S. F., &amp; Hamma, A. (2022).
+Stabilizer rényi entropy.
+Physical Review Letters, 128(5), 050402.</p>
+</dd></dl>
+
+<dl class="mat function objdesc">
+<dt class="sig sig-object highlight mat" id="Magic.MagicQubit.Trans_K">
+<span class="sig-prename descclassname"><span class="pre">Magic.MagicQubit.</span></span><span class="sig-name descname"><span class="pre">Trans_K</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">J</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Magic.MagicQubit.Trans_K" title="Link to this definition">¶</a></dt>
+<dd><p>Transform a Choi matrix into Kraus form</p>
+<dl class="field-list simple">
+<dt class="field-odd" id="Magic.MagicQubit.Trans_K-parameters">Parameters<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.Trans_K-parameters" title="Permalink to this headline">¶</a></dt>
+<dd class="field-odd"><p><strong>J</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – Choi matrix of the input channel.</p>
+</dd>
+<dt class="field-even" id="Magic.MagicQubit.Trans_K-returns">Returns<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.Trans_K-returns" title="Permalink to this headline">¶</a></dt>
+<dd class="field-even"><p>Kraus operators of the quantum channel.</p>
+</dd>
+<dt class="field-odd" id="Magic.MagicQubit.Trans_K-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.Trans_K-return-type" title="Permalink to this headline">¶</a></dt>
+<dd class="field-odd"><p>numeric</p>
+</dd>
+<dt class="field-even" id="Magic.MagicQubit.Trans_K-raises">Raises<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQubit.Trans_K-raises" title="Permalink to this headline">¶</a></dt>
+<dd class="field-even"><p><span><code class="xref mat mat-exc docutils literal notranslate"><span class="pre">error</span></code></span> – None.</p>
+</dd>
+</dl>
+</dd></dl>
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="Magic.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Magic" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Magic
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="Magic.MagicQudit.html" class="md-footer__link md-footer__link--next" aria-label="Next: Magic.MagicQudit" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Magic.MagicQudit
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  
+  
+  <div class="md-footer-meta md-typeset">
+    
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-footer-copyright__highlight">
+        &#169; Copyright .
+        
+    </div>
+  
+    Created using
+    <a href="https://www.sphinx-doc.org/" target="_blank" rel="noopener">Sphinx</a>
+    7.3.7.
+     and
+    <a href="https://github.com/jbms/sphinx-immaterial/" target="_blank" rel="noopener">Sphinx-Immaterial</a>
+  
+</div>
+      
+    </div>
+    
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": ".", "features": [], "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+      
+        <script src="_static/sphinx_immaterial_theme.f9d9eeeb247ace16c.min.js?v=8ec58cb5"></script>
+        <script id="MathJax-script" src="_static/mathjax/tex-mml-chtml.js?v=cadf963e"></script>
+    
+  </body>
+</html>
