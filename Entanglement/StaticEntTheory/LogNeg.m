@@ -36,17 +36,15 @@ function val = LogNeg(rho, varargin)
     dB = d(2);
     dAB = dA*dB;
 
-    cvx_begin sdp quiet
+cvx_begin sdp quiet
     variable R(dAB, dAB) hermitian
-
     rho_TB = PartialTranspose(rho, 2, [dA, dB]);
-    
     t = real(trace(rho_TB * R));
     maximize t
     subject to
         -eye(dAB) <= R <= eye(dAB);
-    cvx_end
+cvx_end
 
-    val = log2(t);
+val = log2(t);
 end
 

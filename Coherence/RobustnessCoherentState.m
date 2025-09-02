@@ -21,13 +21,13 @@ dim = length(rho);
 cvx_begin sdp quiet
     variable M(dim,dim) hermitian
     variable s
-
     minimize s
     subject to
         s >= 0;
         rho <= M;
-        trace(M) == 1+s;
+        trace(M) == 1 + s;
         M >= 0;
-        M == diag(diag(M));
+        M == diag(diag(M)); % incoherent (diagonal)
 cvx_end
 C_R = s;
+end

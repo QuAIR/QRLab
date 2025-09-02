@@ -16,7 +16,7 @@ dC = dim(3);
 
 rhoAB = PartialTrace(rhoABC, 3, [dA, dB, dC]);
 rhoBC = PartialTrace(rhoABC, 1, [dA, dB, dC]);
-rhoB = PartialTrace(rhoBC, 2, [dB, dC]);
+rhoB  = PartialTrace(rhoBC, 2, [dB, dC]);
 
 val = Entropy(rhoAB) + Entropy(rhoBC) - Entropy(rhoB) - Entropy(rhoABC);
 end
