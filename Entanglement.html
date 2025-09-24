@@ -66,6 +66,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#Entanglement.compute_entanglement_measures" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -430,6 +435,16 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#Entanglement.compute_entanglement_measures" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span title="Entanglement.compute_entanglement_measures (MATLAB function)"><span>Entanglement.<wbr>compute_<wbr>entanglement_<wbr>measures</span></span>
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -593,6 +608,24 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#Entanglement.compute_entanglement_measures" class="md-nav__link">
+    
+    <span class="md-ellipsis">
+      <span title="Entanglement.compute_entanglement_measures (MATLAB function)"><span>Entanglement.<wbr>compute_<wbr>entanglement_<wbr>measures</span></span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -615,6 +648,30 @@
 <li class="toctree-l1"><a class="reference internal" href="Entanglement.StaticEntTheory.html">Entanglement.StaticEntTheory</a></li>
 </ul>
 </div>
+<dl class="mat function objdesc">
+<dt class="sig sig-object highlight mat" id="Entanglement.compute_entanglement_measures">
+<span class="sig-prename descclassname"><span class="pre">Entanglement.</span></span><span class="sig-name descname"><span class="pre">compute_entanglement_measures</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">rho_in</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">opts</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Entanglement.compute_entanglement_measures" title="Link to this definition">¶</a></dt>
+<dd><dl>
+<dt>COMPUTE_ENTANGLEMENT_MEASURES</dt><dd><p>Quick dispatcher for entanglement measures. Covers several commonly used
+indicators, supports selective evaluation, and allows custom extensions.</p>
+</dd>
+<dt>Inputs:</dt><dd><p>rho_in : density matrix or quantum channel Choi matrix
+opts   : struct with optional fields:</p>
+<blockquote>
+<div><p>.dims            - subsystem dimensions (default: auto infer)
+.measures        - cell array of target measure names
+.custom_measures - struct; each field name is a measure label,</p>
+<blockquote>
+<div><p>each value is a function handle f(rho, dims)</p>
+</div></blockquote>
+<p>.return_table    - true/false, convert output to table
+.normalize_trace - true/false, normalize trace automatically</p>
+</div></blockquote>
+</dd>
+<dt>Output:</dt><dd><p>result : struct or table containing values and meta data</p>
+</dd>
+</dl>
+</dd></dl>
 
 
 
