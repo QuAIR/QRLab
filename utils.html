@@ -993,18 +993,27 @@
 <dl class="mat function objdesc">
 <dt class="sig sig-object highlight mat" id="utils.UnitaryChannel">
 <span class="sig-prename descclassname"><span class="pre">utils.</span></span><span class="sig-name descname"><span class="pre">UnitaryChannel</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">unitary</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#utils.UnitaryChannel" title="Link to this definition">¶</a></dt>
-<dd><p>UnitaryChannel Provide the Choi matrix of a unitary channel</p>
+<dd><p>UnitaryChannel Provide the Choi matrix of a unitary channel.</p>
+<div class="math notranslate nohighlight">
+\[J_{\mathcal{U}} = d\,(\mathbb{I}\otimes U)\,|\Phi_d\rangle\langle\Phi_d|\,
+(\mathbb{I}\otimes U^\dagger),\]</div>
+<p>where <span class="math notranslate nohighlight">\(|\Phi_d\rangle = \tfrac{1}{\sqrt{d}}\sum_{i=0}^{d-1} |i\rangle\otimes|i\rangle\)</span>
+is the maximally entangled state and <span class="math notranslate nohighlight">\(d\)</span> is the input (and output) dimension.</p>
 <dl class="field-list simple">
 <dt class="field-odd" id="utils.UnitaryChannel-parameters">Parameters<span class="colon">:</span><a class="headerlink" href="#utils.UnitaryChannel-parameters" title="Permalink to this headline">¶</a></dt>
-<dd class="field-odd"><p><strong>unitary</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – The unitary matrix.</p>
+<dd class="field-odd"><p><strong>unitary</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – A <span class="math notranslate nohighlight">\(d\times d\)</span> unitary matrix <span class="math notranslate nohighlight">\(U\)</span>. (Assumed unitary; no validation performed.)</p>
 </dd>
 <dt class="field-even" id="utils.UnitaryChannel-returns">Returns<span class="colon">:</span><a class="headerlink" href="#utils.UnitaryChannel-returns" title="Permalink to this headline">¶</a></dt>
-<dd class="field-even"><p>The Choi matrix of the unitary channel.</p>
+<dd class="field-even"><p>Choi matrix <span class="math notranslate nohighlight">\(J_{\mathcal{U}} \in \mathbb{C}^{d^2 \times d^2}\)</span> of the unitary channel <span class="math notranslate nohighlight">\(\mathcal{U}(\cdot)=U(\cdot)U^\dagger\)</span>.</p>
 </dd>
 <dt class="field-odd" id="utils.UnitaryChannel-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#utils.UnitaryChannel-return-type" title="Permalink to this headline">¶</a></dt>
 <dd class="field-odd"><p>numeric</p>
 </dd>
 </dl>
+<div class="note admonition">
+<p class="admonition-title">Note</p>
+<p>Uses the (unnormalized) Choi–Jamiołkowski representation consistent with the project convention (factor <span class="math notranslate nohighlight">\(d\)</span> included).</p>
+</div>
 </dd></dl>
 
 
