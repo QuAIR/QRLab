@@ -652,23 +652,30 @@
 <dt class="sig sig-object highlight mat" id="Entanglement.compute_entanglement_measures">
 <span class="sig-prename descclassname"><span class="pre">Entanglement.</span></span><span class="sig-name descname"><span class="pre">compute_entanglement_measures</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">rho_in</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">opts</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Entanglement.compute_entanglement_measures" title="Link to this definition">¶</a></dt>
 <dd><dl>
-<dt>COMPUTE_ENTANGLEMENT_MEASURES</dt><dd><p>Quick dispatcher for entanglement measures. Covers several commonly used
-indicators, supports selective evaluation, and allows custom extensions.</p>
+<dt>COMPUTE_ENTANGLEMENT_MEASURES</dt><dd><p>Dispatcher for a set of common entanglement measures. Supports selective
+evaluation, custom extensions, basic preprocessing (Hermitization, trace
+normalization), and optional tabular output.</p>
 </dd>
-<dt>Inputs:</dt><dd><p>rho_in : density matrix or quantum channel Choi matrix
+<dt>Inputs:</dt><dd><p>rho_in : Density matrix (state) or channel Choi matrix.
 opts   : struct with optional fields:</p>
 <blockquote>
-<div><p>.dims            - subsystem dimensions (default: auto infer)
-.measures        - cell array of target measure names
-.custom_measures - struct; each field name is a measure label,</p>
+<div><p>.dims            - [d_A, d_B]; if empty, infer square dims (default: []).
+.measures        - cell array of measure names to evaluate</p>
 <blockquote>
-<div><p>each value is a function handle f(rho, dims)</p>
+<div><p>(default: {‘LogNeg’,’RainsBound’,’MaxRainsEntropy’,’TemperedLogNeg’}).</p>
 </div></blockquote>
-<p>.return_table    - true/false, convert output to table
-.normalize_trace - true/false, normalize trace automatically</p>
+<dl class="simple">
+<dt>.custom_measures - struct; each field is a label, each value a</dt><dd><p>function handle f(rho, dims) returning a scalar.</p>
+</dd>
+</dl>
+<p>.return_table    - true/false; if true, return a table (default: false).
+.normalize_trace - true/false; if true, Hermitize and normalize (default: true).</p>
 </div></blockquote>
 </dd>
-<dt>Output:</dt><dd><p>result : struct or table containing values and meta data</p>
+<dt>Output:</dt><dd><dl class="simple">
+<dt>result<span class="classifier">struct with fields per measure (value, elapsed) + meta, or a table</span></dt><dd><p>with columns Measure, Value, Elapsed when opts.return_table is true.</p>
+</dd>
+</dl>
 </dd>
 </dl>
 </dd></dl>

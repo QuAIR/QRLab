@@ -807,7 +807,8 @@
 <dl class="mat function objdesc">
 <dt class="sig sig-object highlight mat" id="Entanglement.DynamicEntTheory.MaxLogNeg">
 <span class="sig-prename descclassname"><span class="pre">Entanglement.DynamicEntTheory.</span></span><span class="sig-name descname"><span class="pre">MaxLogNeg</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">JN</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">dim</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Entanglement.DynamicEntTheory.MaxLogNeg" title="Link to this definition">¶</a></dt>
-<dd><div class="math notranslate nohighlight">
+<dd><p>Compute the generalized <span class="math notranslate nohighlight">\(\kappa\)</span>-entanglement (max-logarithmic negativity) of a bipartite channel.</p>
+<div class="math notranslate nohighlight">
 \[LN_{\max}(\mathcal{N}) = \log \inf\{\max\{\|P_{AB}\|_{\infty},
 \|P^{T_B}_{AB}\|_{\infty}\}: -P^{T_{BB'}}_{ABA'B'} \leq (J^{\mathcal{N}}_{ABA'B'})^{T_{BB'}} \leq P^{T_{BB'}}_{ABA'B'}\},\]</div>
 <dl class="field-list simple">
@@ -818,8 +819,7 @@
 </ul>
 </dd>
 <dt class="field-even" id="Entanglement.DynamicEntTheory.MaxLogNeg-returns">Returns<span class="colon">:</span><a class="headerlink" href="#Entanglement.DynamicEntTheory.MaxLogNeg-returns" title="Permalink to this headline">¶</a></dt>
-<dd class="field-even"><p>The generalized <span class="math notranslate nohighlight">\(\kappa\)</span>-entanglement
-(or max-logarithmic negativity) of bipartite channel.</p>
+<dd class="field-even"><p>The generalized <span class="math notranslate nohighlight">\(\kappa\)</span>-entanglement (max-logarithmic negativity) of the bipartite channel (in bits/use).</p>
 </dd>
 <dt class="field-odd" id="Entanglement.DynamicEntTheory.MaxLogNeg-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#Entanglement.DynamicEntTheory.MaxLogNeg-return-type" title="Permalink to this headline">¶</a></dt>
 <dd class="field-odd"><p>numeric</p>
@@ -839,7 +839,8 @@ Physical Review A, 107(1), 012429.</p>
 <dl class="mat function objdesc">
 <dt class="sig sig-object highlight mat" id="Entanglement.DynamicEntTheory.MaxRainsInfo">
 <span class="sig-prename descclassname"><span class="pre">Entanglement.DynamicEntTheory.</span></span><span class="sig-name descname"><span class="pre">MaxRainsInfo</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">JN</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">dim</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Entanglement.DynamicEntTheory.MaxRainsInfo" title="Link to this definition">¶</a></dt>
-<dd><div class="math notranslate nohighlight">
+<dd><p>Compute the bidirectional max-Rains information of a bipartite channel.</p>
+<div class="math notranslate nohighlight">
 \[R^{2\rightarrow 2}_{\max}(\mathcal{N}) = \log \inf\{\|V_{AB} + Y_{AB}\|_{\infty}:
  (V_{ABA'B'} - Y_{ABA'B'})^{T_{BB'}} \geq J^{\mathcal{N}}_{ABA'B'}\},\]</div>
 <dl class="field-list simple">
@@ -850,7 +851,7 @@ Physical Review A, 107(1), 012429.</p>
 </ul>
 </dd>
 <dt class="field-even" id="Entanglement.DynamicEntTheory.MaxRainsInfo-returns">Returns<span class="colon">:</span><a class="headerlink" href="#Entanglement.DynamicEntTheory.MaxRainsInfo-returns" title="Permalink to this headline">¶</a></dt>
-<dd class="field-even"><p>The bidirectional max-Rains information of bipartite channel.</p>
+<dd class="field-even"><p>The bidirectional max-Rains information of the bipartite channel (in bits/use).</p>
 </dd>
 <dt class="field-odd" id="Entanglement.DynamicEntTheory.MaxRainsInfo-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#Entanglement.DynamicEntTheory.MaxRainsInfo-return-type" title="Permalink to this headline">¶</a></dt>
 <dd class="field-odd"><p>numeric</p>

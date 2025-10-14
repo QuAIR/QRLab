@@ -1043,23 +1043,21 @@
 <dl class="mat function objdesc">
 <dt class="sig sig-object highlight mat" id="Entanglement.QCapacity.CQClaCapacity">
 <span class="sig-prename descclassname"><span class="pre">Entanglement.QCapacity.</span></span><span class="sig-name descname"><span class="pre">CQClaCapacity</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">map_alph</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Entanglement.QCapacity.CQClaCapacity" title="Link to this definition">¶</a></dt>
-<dd><div class="math notranslate nohighlight">
+<dd><p>Compute the classical capacity of a classical-quantum (CQ) channel.</p>
+<div class="math notranslate nohighlight">
 \[C(\Phi) = \max S\left(\sum_{x\in\mathcal{X}} p_x \Phi(x)\right) - \sum_{x\in\mathcal{X}} p_x S(\Phi(x))\]</div>
 <p>where <span class="math notranslate nohighlight">\({p_x}_x\)</span> forms probability distribution, <span class="math notranslate nohighlight">\(S\)</span> is the von Neumann entropy,
 and <span class="math notranslate nohighlight">\(\Phi:\mathcal{X}\rightarrow \mathcal{D}(\mathcal{H})\)</span> is some classical-quantum channel.</p>
 <dl class="field-list simple">
 <dt class="field-odd" id="Entanglement.QCapacity.CQClaCapacity-parameters">Parameters<span class="colon">:</span><a class="headerlink" href="#Entanglement.QCapacity.CQClaCapacity-parameters" title="Permalink to this headline">¶</a></dt>
-<dd class="field-odd"><p><strong>map_alph</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – mapping data of the CQ-channel, should be stored in a 3D-tensor with the</p>
+<dd class="field-odd"><p><strong>map_alph</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – Mapping tensor of the CQ channel. A 3D array whose first index
+enumerates <span class="math notranslate nohighlight">\(x\in\mathcal{X}\)</span>, and the last two indices contain the density matrices <span class="math notranslate nohighlight">\(\Phi(x)\)</span>.</p>
 </dd>
-</dl>
-<p>:param first index representing the labelling <span class="math notranslate nohighlight">\(x\in \mathcal{X}\)</span> and last two indices give:
-:param mapped density operators.:</p>
-<dl class="field-list simple">
-<dt class="field-odd" id="Entanglement.QCapacity.CQClaCapacity-returns">Returns<span class="colon">:</span><a class="headerlink" href="#Entanglement.QCapacity.CQClaCapacity-returns" title="Permalink to this headline">¶</a></dt>
-<dd class="field-odd"><p>The capacity value of <span class="math notranslate nohighlight">\(\Phi\)</span>.</p>
+<dt class="field-even" id="Entanglement.QCapacity.CQClaCapacity-returns">Returns<span class="colon">:</span><a class="headerlink" href="#Entanglement.QCapacity.CQClaCapacity-returns" title="Permalink to this headline">¶</a></dt>
+<dd class="field-even"><p>The capacity value of <span class="math notranslate nohighlight">\(\Phi\)</span> (in bits/use).</p>
 </dd>
-<dt class="field-even" id="Entanglement.QCapacity.CQClaCapacity-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#Entanglement.QCapacity.CQClaCapacity-return-type" title="Permalink to this headline">¶</a></dt>
-<dd class="field-even"><p>numeric</p>
+<dt class="field-odd" id="Entanglement.QCapacity.CQClaCapacity-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#Entanglement.QCapacity.CQClaCapacity-return-type" title="Permalink to this headline">¶</a></dt>
+<dd class="field-odd"><p>numeric</p>
 </dd>
 </dl>
 <div class="note admonition">
@@ -1073,7 +1071,8 @@ IEEE Transactions on Information Theory, 49(7), 1753-1768.</p>
 <dl class="mat function objdesc">
 <dt class="sig sig-object highlight mat" id="Entanglement.QCapacity.EntAssistedCapacity">
 <span class="sig-prename descclassname"><span class="pre">Entanglement.QCapacity.</span></span><span class="sig-name descname"><span class="pre">EntAssistedCapacity</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">JN</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">dim</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Entanglement.QCapacity.EntAssistedCapacity" title="Link to this definition">¶</a></dt>
-<dd><div class="math notranslate nohighlight">
+<dd><p>Compute the entanglement-assisted classical capacity.</p>
+<div class="math notranslate nohighlight">
 \[C_{ea}(\Phi) = \max_{\rho\in\mathcal{D}(\mathcal{H})} I(\rho, \Phi)\]</div>
 <p>where <span class="math notranslate nohighlight">\(I(\rho, \Phi)\)</span> is the mutual information of the channel <span class="math notranslate nohighlight">\(\Phi\)</span>.</p>
 <dl class="field-list simple">
@@ -1084,7 +1083,7 @@ IEEE Transactions on Information Theory, 49(7), 1753-1768.</p>
 </ul>
 </dd>
 <dt class="field-even" id="Entanglement.QCapacity.EntAssistedCapacity-returns">Returns<span class="colon">:</span><a class="headerlink" href="#Entanglement.QCapacity.EntAssistedCapacity-returns" title="Permalink to this headline">¶</a></dt>
-<dd class="field-even"><p>The entanglement-assisted classical capacity of <span class="math notranslate nohighlight">\(\Phi\)</span>.</p>
+<dd class="field-even"><p>The entanglement-assisted classical capacity of <span class="math notranslate nohighlight">\(\Phi\)</span> (in bits/use).</p>
 </dd>
 <dt class="field-odd" id="Entanglement.QCapacity.EntAssistedCapacity-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#Entanglement.QCapacity.EntAssistedCapacity-return-type" title="Permalink to this headline">¶</a></dt>
 <dd class="field-odd"><p>numeric</p>
@@ -1101,7 +1100,8 @@ IEEE transactions on Information Theory, 48(10), 2637-2655.</p>
 <dl class="mat function objdesc">
 <dt class="sig sig-object highlight mat" id="Entanglement.QCapacity.QuaDegCapacity">
 <span class="sig-prename descclassname"><span class="pre">Entanglement.QCapacity.</span></span><span class="sig-name descname"><span class="pre">QuaDegCapacity</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">JN</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">dim</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Entanglement.QCapacity.QuaDegCapacity" title="Link to this definition">¶</a></dt>
-<dd><div class="math notranslate nohighlight">
+<dd><p>Compute the quantum capacity of a degradable channel via coherent information.</p>
+<div class="math notranslate nohighlight">
 \[Q(\Phi) = \max_{\rho\in\mathcal{D}(\mathcal{H})} I_c(\rho, \Phi)\]</div>
 <p>where <span class="math notranslate nohighlight">\(I_c(\rho, \Phi)\)</span> is the coherent information of the (degradable) channel <span class="math notranslate nohighlight">\(\Phi\)</span> for input state <span class="math notranslate nohighlight">\(\rho\)</span>.</p>
 <dl class="field-list simple">
@@ -1112,28 +1112,33 @@ IEEE transactions on Information Theory, 48(10), 2637-2655.</p>
 </ul>
 </dd>
 <dt class="field-even" id="Entanglement.QCapacity.QuaDegCapacity-returns">Returns<span class="colon">:</span><a class="headerlink" href="#Entanglement.QCapacity.QuaDegCapacity-returns" title="Permalink to this headline">¶</a></dt>
-<dd class="field-even"><p>The quantum capacity of the (degradable) channel <span class="math notranslate nohighlight">\(\Phi\)</span>.</p>
+<dd class="field-even"><p>The quantum capacity of the (degradable) channel <span class="math notranslate nohighlight">\(\Phi\)</span> (in bits/use).</p>
 </dd>
 <dt class="field-odd" id="Entanglement.QCapacity.QuaDegCapacity-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#Entanglement.QCapacity.QuaDegCapacity-return-type" title="Permalink to this headline">¶</a></dt>
 <dd class="field-odd"><p>numeric</p>
 </dd>
 </dl>
+<div class="note admonition">
+<p class="admonition-title">Note</p>
+<p>Assumes degradability and uses a degrading map to evaluate <span class="math notranslate nohighlight">\(I_c\)</span>.</p>
+</div>
 </dd></dl>
 
 <dl class="mat function objdesc">
 <dt class="sig sig-object highlight mat" id="Entanglement.QCapacity.RelEntropyEnt">
 <span class="sig-prename descclassname"><span class="pre">Entanglement.QCapacity.</span></span><span class="sig-name descname"><span class="pre">RelEntropyEnt</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">rho</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">dim</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Entanglement.QCapacity.RelEntropyEnt" title="Link to this definition">¶</a></dt>
-<dd><div class="math notranslate nohighlight">
+<dd><p>Compute the PPT relative entropy of entanglement.</p>
+<div class="math notranslate nohighlight">
 \[E_{\operatorname{PPT}}(\rho) = \min_{\tau\in\operatorname{PPT}} D(\rho\| \tau)\]</div>
 <dl class="field-list simple">
 <dt class="field-odd" id="Entanglement.QCapacity.RelEntropyEnt-parameters">Parameters<span class="colon">:</span><a class="headerlink" href="#Entanglement.QCapacity.RelEntropyEnt-parameters" title="Permalink to this headline">¶</a></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>rho</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – The density matrix of the target state.</p></li>
-<li><p><strong>dim</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – The dimension of the composite systems of the state.</p></li>
+<li><p><strong>dim</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – The dimension array <span class="math notranslate nohighlight">\([d_A,d_B]\)</span>.</p></li>
 </ul>
 </dd>
 <dt class="field-even" id="Entanglement.QCapacity.RelEntropyEnt-returns">Returns<span class="colon">:</span><a class="headerlink" href="#Entanglement.QCapacity.RelEntropyEnt-returns" title="Permalink to this headline">¶</a></dt>
-<dd class="field-even"><p>The PPT relative entropy of <span class="math notranslate nohighlight">\(\rho\)</span>.</p>
+<dd class="field-even"><p>The PPT relative entropy of <span class="math notranslate nohighlight">\(\rho\)</span> (in bits).</p>
 </dd>
 <dt class="field-odd" id="Entanglement.QCapacity.RelEntropyEnt-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#Entanglement.QCapacity.RelEntropyEnt-return-type" title="Permalink to this headline">¶</a></dt>
 <dd class="field-odd"><p>numeric</p>
@@ -1150,12 +1155,12 @@ IEEE transactions on Information Theory, 48(10), 2637-2655.</p>
 <dt class="field-odd" id="Entanglement.QCapacity.RelEntropyRecovery-parameters">Parameters<span class="colon">:</span><a class="headerlink" href="#Entanglement.QCapacity.RelEntropyRecovery-parameters" title="Permalink to this headline">¶</a></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>rhoABC</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – The density matrix of the tripartite target state.</p></li>
-<li><p><strong>dim</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – The dimension of the composite systems of the state.</p></li>
+<li><p><strong>dim</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – The dimension array of the composite systems <span class="math notranslate nohighlight">\([d_A,d_B,d_C]\)</span>.</p></li>
 </ul>
 </dd>
 <dt class="field-even" id="Entanglement.QCapacity.RelEntropyRecovery-returns">Returns<span class="colon">:</span><a class="headerlink" href="#Entanglement.QCapacity.RelEntropyRecovery-returns" title="Permalink to this headline">¶</a></dt>
-<dd class="field-even"><p><p>val: The relative entropy of recovery of <span class="math notranslate nohighlight">\(\rho_{ABC}\)</span>.</p>
-<p>JR: The Choi matrix of the recovery channel.</p>
+<dd class="field-even"><p><p>val: The relative entropy of recovery of <span class="math notranslate nohighlight">\(\rho_{ABC}\)</span> (in bits).</p>
+<p>JR: The Choi matrix of the optimal recovery channel <span class="math notranslate nohighlight">\(\mathcal{R}:B\to BC\)</span>.</p>
 </p>
 </dd>
 <dt class="field-odd" id="Entanglement.QCapacity.RelEntropyRecovery-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#Entanglement.QCapacity.RelEntropyRecovery-return-type" title="Permalink to this headline">¶</a></dt>

@@ -1367,7 +1367,8 @@
 <dl class="mat function objdesc">
 <dt class="sig sig-object highlight mat" id="Entanglement.StaticEntTheory.Eeta">
 <span class="sig-prename descclassname"><span class="pre">Entanglement.StaticEntTheory.</span></span><span class="sig-name descname"><span class="pre">Eeta</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">rho</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">varargin</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Entanglement.StaticEntTheory.Eeta" title="Link to this definition">¶</a></dt>
-<dd><div class="math notranslate nohighlight">
+<dd><p>Compute the <span class="math notranslate nohighlight">\(\eta\)</span>-entanglement via an operator norm program.</p>
+<div class="math notranslate nohighlight">
 \[E_{\eta}(\rho_{AB}) = \max - \log\|Y_{AB}^{T_{B}}\|_{\infty} \
 s.t. \
 -Y_{AB} \leq P^{T_{B}} \leq Y_{AB}\]</div>
@@ -1432,7 +1433,8 @@ arXiv preprint arXiv:2311.10649.</p>
 <dl class="mat function objdesc">
 <dt class="sig sig-object highlight mat" id="Entanglement.StaticEntTheory.LogFidPPT">
 <span class="sig-prename descclassname"><span class="pre">Entanglement.StaticEntTheory.</span></span><span class="sig-name descname"><span class="pre">LogFidPPT</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">rho</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">varargin</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Entanglement.StaticEntTheory.LogFidPPT" title="Link to this definition">¶</a></dt>
-<dd><div class="math notranslate nohighlight">
+<dd><p>Compute the PPT-constrained logarithmic fidelity with the target state.</p>
+<div class="math notranslate nohighlight">
 \[E_{\operatorname{PPT}}(\rho_{AB}) = \log\max F(\rho, \sigma) \
 s.t. \
 \sigma \in \operatorname{PPT}(A:B)\]</div>
@@ -1444,7 +1446,7 @@ s.t. \
 </ul>
 </dd>
 <dt class="field-even" id="Entanglement.StaticEntTheory.LogFidPPT-returns">Returns<span class="colon">:</span><a class="headerlink" href="#Entanglement.StaticEntTheory.LogFidPPT-returns" title="Permalink to this headline">¶</a></dt>
-<dd class="field-even"><p>The PPT-entanglement of <span class="math notranslate nohighlight">\(\rho_{AB}\)</span>.</p>
+<dd class="field-even"><p>The PPT entanglement measure of <span class="math notranslate nohighlight">\(\rho_{AB}\)</span>, defined via fidelity maximization.</p>
 </dd>
 <dt class="field-odd" id="Entanglement.StaticEntTheory.LogFidPPT-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#Entanglement.StaticEntTheory.LogFidPPT-return-type" title="Permalink to this headline">¶</a></dt>
 <dd class="field-odd"><p>numeric</p>
@@ -1464,8 +1466,9 @@ Physical Review A, 107(1), 012429.</p>
 <dl class="mat function objdesc">
 <dt class="sig sig-object highlight mat" id="Entanglement.StaticEntTheory.LogNeg">
 <span class="sig-prename descclassname"><span class="pre">Entanglement.StaticEntTheory.</span></span><span class="sig-name descname"><span class="pre">LogNeg</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">rho</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">varargin</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Entanglement.StaticEntTheory.LogNeg" title="Link to this definition">¶</a></dt>
-<dd><div class="math notranslate nohighlight">
-\[E_{\operatorname{N}}(\rho_{AB}) = \log\|\rho^{T_{B}}_{AB}\|_1\]</div>
+<dd><p>Compute the logarithmic negativity of a bipartite state.</p>
+<div class="math notranslate nohighlight">
+\[E_{\operatorname{N}}(\rho_{AB}) = \log\|\rho^{T_{B}}_{AB}\|_1.\]</div>
 <dl class="field-list simple">
 <dt class="field-odd" id="Entanglement.StaticEntTheory.LogNeg-parameters">Parameters<span class="colon">:</span><a class="headerlink" href="#Entanglement.StaticEntTheory.LogNeg-parameters" title="Permalink to this headline">¶</a></dt>
 <dd class="field-odd"><ul class="simple">
@@ -1494,7 +1497,8 @@ Physical review letters, 95(9), 090503.</p>
 <dl class="mat function objdesc">
 <dt class="sig sig-object highlight mat" id="Entanglement.StaticEntTheory.MaxRains">
 <span class="sig-prename descclassname"><span class="pre">Entanglement.StaticEntTheory.</span></span><span class="sig-name descname"><span class="pre">MaxRains</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">rho</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">varargin</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Entanglement.StaticEntTheory.MaxRains" title="Link to this definition">¶</a></dt>
-<dd><div class="math notranslate nohighlight">
+<dd><p>Compute the max-Rains entropy (improved logarithmic negativity).</p>
+<div class="math notranslate nohighlight">
 \[E_{\operatorname{W}}(\rho_{AB}) =
 \log\max\operatorname{Tr}[\rho^{T_B}_{AB} R_{AB}], \ s.t.\
   \|R_{AB}\|_{\infty} \leq 1, R^{T_{B}}_{AB} \geq 0.\]</div>
@@ -1506,7 +1510,7 @@ Physical review letters, 95(9), 090503.</p>
 </ul>
 </dd>
 <dt class="field-even" id="Entanglement.StaticEntTheory.MaxRains-returns">Returns<span class="colon">:</span><a class="headerlink" href="#Entanglement.StaticEntTheory.MaxRains-returns" title="Permalink to this headline">¶</a></dt>
-<dd class="field-even"><p>The improved logarithmic negativity (max-Rains entropy) of <span class="math notranslate nohighlight">\(\rho_{AB}\)</span>.</p>
+<dd class="field-even"><p>The max-Rains entropy of <span class="math notranslate nohighlight">\(\rho_{AB}\)</span> (improved logarithmic negativity).</p>
 </dd>
 <dt class="field-odd" id="Entanglement.StaticEntTheory.MaxRains-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#Entanglement.StaticEntTheory.MaxRains-return-type" title="Permalink to this headline">¶</a></dt>
 <dd class="field-odd"><p>numeric</p>
@@ -1526,7 +1530,8 @@ Physical Review A, 94(5), 050301.</p>
 <dl class="mat function objdesc">
 <dt class="sig sig-object highlight mat" id="Entanglement.StaticEntTheory.RainsBound">
 <span class="sig-prename descclassname"><span class="pre">Entanglement.StaticEntTheory.</span></span><span class="sig-name descname"><span class="pre">RainsBound</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">rho</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">varargin</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Entanglement.StaticEntTheory.RainsBound" title="Link to this definition">¶</a></dt>
-<dd><div class="math notranslate nohighlight">
+<dd><p>Compute the Rains bound via relative entropy distance to the PPT’ set.</p>
+<div class="math notranslate nohighlight">
 \[R(\rho_{AB}) = \min\operatorname{D}(\rho_{AB}\|\sigma_{AB}), \
 s.t. \
   \sigma_{AB} \in \operatorname{PPT'}(A:B).\]</div>
@@ -1538,7 +1543,7 @@ s.t. \
 </ul>
 </dd>
 <dt class="field-even" id="Entanglement.StaticEntTheory.RainsBound-returns">Returns<span class="colon">:</span><a class="headerlink" href="#Entanglement.StaticEntTheory.RainsBound-returns" title="Permalink to this headline">¶</a></dt>
-<dd class="field-even"><p>The Rains’ bound of <span class="math notranslate nohighlight">\(\rho_{AB}\)</span>.</p>
+<dd class="field-even"><p>The Rains bound of <span class="math notranslate nohighlight">\(\rho_{AB}\)</span>.</p>
 </dd>
 <dt class="field-odd" id="Entanglement.StaticEntTheory.RainsBound-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#Entanglement.StaticEntTheory.RainsBound-return-type" title="Permalink to this headline">¶</a></dt>
 <dd class="field-odd"><p>numeric</p>
@@ -1558,7 +1563,8 @@ IEEE Transactions on Information Theory, 47(7), 2921-2933.</p>
 <dl class="mat function objdesc">
 <dt class="sig sig-object highlight mat" id="Entanglement.StaticEntTheory.TempLogNeg">
 <span class="sig-prename descclassname"><span class="pre">Entanglement.StaticEntTheory.</span></span><span class="sig-name descname"><span class="pre">TempLogNeg</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">rho</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">varargin</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Entanglement.StaticEntTheory.TempLogNeg" title="Link to this definition">¶</a></dt>
-<dd><div class="math notranslate nohighlight">
+<dd><p>Compute the tempered logarithmic negativity of a bipartite state.</p>
+<div class="math notranslate nohighlight">
 \[E_N^{\tau}(\rho_{AB}).\]</div>
 <dl class="field-list simple">
 <dt class="field-odd" id="Entanglement.StaticEntTheory.TempLogNeg-parameters">Parameters<span class="colon">:</span><a class="headerlink" href="#Entanglement.StaticEntTheory.TempLogNeg-parameters" title="Permalink to this headline">¶</a></dt>
@@ -1568,7 +1574,7 @@ IEEE Transactions on Information Theory, 47(7), 2921-2933.</p>
 </ul>
 </dd>
 <dt class="field-even" id="Entanglement.StaticEntTheory.TempLogNeg-returns">Returns<span class="colon">:</span><a class="headerlink" href="#Entanglement.StaticEntTheory.TempLogNeg-returns" title="Permalink to this headline">¶</a></dt>
-<dd class="field-even"><p>The Temperal logarithmic negativity of <span class="math notranslate nohighlight">\(\rho_{AB}\)</span>.</p>
+<dd class="field-even"><p>The tempered logarithmic negativity of <span class="math notranslate nohighlight">\(\rho_{AB}\)</span>.</p>
 </dd>
 <dt class="field-odd" id="Entanglement.StaticEntTheory.TempLogNeg-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#Entanglement.StaticEntTheory.TempLogNeg-return-type" title="Permalink to this headline">¶</a></dt>
 <dd class="field-odd"><p>numeric</p>
