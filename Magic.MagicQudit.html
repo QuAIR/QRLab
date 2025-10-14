@@ -1541,11 +1541,11 @@ Bulletin of the American Physical Society, 59.</p>
 <dl class="mat function objdesc">
 <dt class="sig sig-object highlight mat" id="Magic.MagicQudit.WTraceNorm">
 <span class="sig-prename descclassname"><span class="pre">Magic.MagicQudit.</span></span><span class="sig-name descname"><span class="pre">WTraceNorm</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">PhaseOp</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">rho</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Magic.MagicQudit.WTraceNorm" title="Link to this definition">¶</a></dt>
-<dd><p>Compute the Wigner Trace Norm of a linear Operator</p>
+<dd><p>Compute the Wigner trace norm of a linear operator with respect to a phase-space frame.</p>
 <dl class="field-list">
 <dt class="field-odd" id="Magic.MagicQudit.WTraceNorm-parameters">Parameters<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQudit.WTraceNorm-parameters" title="Permalink to this headline">¶</a></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>PhaseOp</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – Cell array of Phase space operators.</p></li>
+<li><p><strong>PhaseOp</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – Cell array of phase-space point operators (frame).</p></li>
 <li><p><strong>rho</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – Density matrix.</p></li>
 </ul>
 </dd>
@@ -1560,8 +1560,8 @@ Bulletin of the American Physical Society, 59.</p>
     is raised.</p>
 </dd>
 <dt class="field-odd" id="Magic.MagicQudit.WTraceNorm-examples">Examples<span class="colon">:</span><a class="headerlink" href="#Magic.MagicQudit.WTraceNorm-examples" title="Permalink to this headline">¶</a></dt>
-<dd class="field-odd"><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><code><span class="p">[</span><span class="n">output</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">WTraceNorm</span><span class="p">(</span><span class="n">PhaseOp</span><span class="p">,</span><span class="w"> </span><span class="n">rho</span><span class="p">);</span>
-<span class="c">% Calculate the Wigner Trace Norm of rho.</span>
+<dd class="field-odd"><div class="highlight-matlab notranslate"><div class="highlight"><pre><span></span><code><span class="n">output</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">WTraceNorm</span><span class="p">(</span><span class="n">PhaseOp</span><span class="p">,</span><span class="w"> </span><span class="n">rho</span><span class="p">);</span>
+<span class="c">% Compute the Wigner trace norm of rho given a phase-space frame.</span>
 </code></pre></div>
 </div>
 </dd>
