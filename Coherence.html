@@ -941,19 +941,19 @@
 <dl class="mat function objdesc">
 <dt class="sig sig-object highlight mat" id="Coherence.FlagPoleState">
 <span class="sig-prename descclassname"><span class="pre">Coherence.</span></span><span class="sig-name descname"><span class="pre">FlagPoleState</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">dim</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">p</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Coherence.FlagPoleState" title="Link to this definition">¶</a></dt>
-<dd><p>Provide a flag pole state</p>
+<dd><p>Construct a flag-pole state in the computational basis.</p>
 <div class="math notranslate nohighlight">
-\[\ket{\psi} = \sqrt{p} \ket{0} + \sum_{i=1}^{d-1}
-\sqrt{\frac{1-p}{d-1}}\ket{i}\]</div>
+\[\ket{\psi} = \sqrt{p}\,\ket{0} + \sum_{i=1}^{d-1} \sqrt{\frac{1-p}{d-1}}\,\ket{i},\]</div>
+<p>so that <span class="math notranslate nohighlight">\(\rho = \ket{\psi}\!\bra{\psi}\)</span> is a pure state.</p>
 <dl class="field-list simple">
 <dt class="field-odd" id="Coherence.FlagPoleState-parameters">Parameters<span class="colon">:</span><a class="headerlink" href="#Coherence.FlagPoleState-parameters" title="Permalink to this headline">¶</a></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dim</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – The dimension of the system.</p></li>
-<li><p><strong>p</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – The amplitude of the flag.</p></li>
+<li><p><strong>dim</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – System dimension <span class="math notranslate nohighlight">\(d \ge 2\)</span>.</p></li>
+<li><p><strong>p</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – Flag amplitude <span class="math notranslate nohighlight">\(p \in [0,1]\)</span>.</p></li>
 </ul>
 </dd>
 <dt class="field-even" id="Coherence.FlagPoleState-returns">Returns<span class="colon">:</span><a class="headerlink" href="#Coherence.FlagPoleState-returns" title="Permalink to this headline">¶</a></dt>
-<dd class="field-even"><p>The density matrix of the flag state.</p>
+<dd class="field-even"><p>Density matrix <span class="math notranslate nohighlight">\(\rho = \ket{\psi}\!\bra{\psi}\)</span> of the flag-pole state.</p>
 </dd>
 <dt class="field-odd" id="Coherence.FlagPoleState-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#Coherence.FlagPoleState-return-type" title="Permalink to this headline">¶</a></dt>
 <dd class="field-odd"><p>state (matrix)</p>
@@ -964,20 +964,19 @@
 <dl class="mat function objdesc">
 <dt class="sig sig-object highlight mat" id="Coherence.RobustnessCoherentChannel">
 <span class="sig-prename descclassname"><span class="pre">Coherence.</span></span><span class="sig-name descname"><span class="pre">RobustnessCoherentChannel</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">channel</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">varargin</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Coherence.RobustnessCoherentChannel" title="Link to this definition">¶</a></dt>
-<dd><p>Provide the robustness of a coherent channel.</p>
+<dd><p>Compute the robustness of coherence of a quantum channel in Choi form.</p>
 <div class="math notranslate nohighlight">
-\[1 + C_R(\mathcal{N}) = \min_{\mathcal{M}}\{\lambda | \mathcal{N} \le \lambda \mathcal{M}\},\]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> is a maximally incoherent operation (MIO).</p>
+\[1 + C_R(\mathcal{N}) = \min_{\mathcal{M}}\{\lambda \,\mid\, \mathcal{N} \le \lambda \mathcal{M}\},\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> ranges over maximally incoherent operations (MIO).</p>
 <dl class="field-list simple">
 <dt class="field-odd" id="Coherence.RobustnessCoherentChannel-parameters">Parameters<span class="colon">:</span><a class="headerlink" href="#Coherence.RobustnessCoherentChannel-parameters" title="Permalink to this headline">¶</a></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>channel</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">matrix</span></code></span>) – The Choi matrix of the input channel <span class="math notranslate nohighlight">\(\mathcal{N}\)</span>.</p></li>
-<li><p><strong>varargin</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">list</span></code></span>) – Dimension of the given channel, default to
-[d_i,d_o], with d_i=d_o.</p></li>
+<li><p><strong>channel</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">matrix</span></code></span>) – Choi matrix <span class="math notranslate nohighlight">\(J_\mathcal{N} \in \mathbb{C}^{(d_i d_o)\times(d_i d_o)}\)</span> of the input channel <span class="math notranslate nohighlight">\(\mathcal{N}\)</span>.</p></li>
+<li><p><strong>varargin</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">list</span></code></span>) – Channel dimensions, default <cite>[d_i, d_o]</cite> with <cite>d_i = d_o = sqrt{text{size}(J_mathcal{N},1)}</cite>.</p></li>
 </ul>
 </dd>
 <dt class="field-even" id="Coherence.RobustnessCoherentChannel-returns">Returns<span class="colon">:</span><a class="headerlink" href="#Coherence.RobustnessCoherentChannel-returns" title="Permalink to this headline">¶</a></dt>
-<dd class="field-even"><p>The robustness of the input channel.</p>
+<dd class="field-even"><p>Robustness of coherence <span class="math notranslate nohighlight">\(C_R(\mathcal{N}) \ge 0\)</span> for the input channel.</p>
 </dd>
 <dt class="field-odd" id="Coherence.RobustnessCoherentChannel-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#Coherence.RobustnessCoherentChannel-return-type" title="Permalink to this headline">¶</a></dt>
 <dd class="field-odd"><p>C_R (numeric)</p>
@@ -994,16 +993,16 @@ Quantum, 2, 100.</p>
 <dl class="mat function objdesc">
 <dt class="sig sig-object highlight mat" id="Coherence.RobustnessCoherentState">
 <span class="sig-prename descclassname"><span class="pre">Coherence.</span></span><span class="sig-name descname"><span class="pre">RobustnessCoherentState</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">rho</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Coherence.RobustnessCoherentState" title="Link to this definition">¶</a></dt>
-<dd><p>Provide the robustness of a coherent state.</p>
+<dd><p>Compute the robustness of coherence of a quantum state <span class="math notranslate nohighlight">\(\rho\)</span>.</p>
 <div class="math notranslate nohighlight">
-\[1 + C_R(\rho) = \min_{\sigma}\{\lambda | \rho \le \lambda \sigma\},\]</div>
-<p>where <span class="math notranslate nohighlight">\(\sigma\)</span> is the incoherent state.</p>
+\[1 + C_R(\rho) = \min_{\sigma}\{\lambda \,\mid\, \rho \le \lambda \sigma\},\]</div>
+<p>where <span class="math notranslate nohighlight">\(\sigma\)</span> is an incoherent (diagonal) state in the reference basis.</p>
 <dl class="field-list simple">
 <dt class="field-odd" id="Coherence.RobustnessCoherentState-parameters">Parameters<span class="colon">:</span><a class="headerlink" href="#Coherence.RobustnessCoherentState-parameters" title="Permalink to this headline">¶</a></dt>
-<dd class="field-odd"><p><strong>rho</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">matrix</span></code></span>) – The density matrix of quantum state.</p>
+<dd class="field-odd"><p><strong>rho</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">matrix</span></code></span>) – Density matrix <span class="math notranslate nohighlight">\(\rho \in \mathbb{C}^{d\times d}\)</span> (positive semidefinite, <span class="math notranslate nohighlight">\(\mathrm{Tr}\,\rho=1\)</span>).</p>
 </dd>
 <dt class="field-even" id="Coherence.RobustnessCoherentState-returns">Returns<span class="colon">:</span><a class="headerlink" href="#Coherence.RobustnessCoherentState-returns" title="Permalink to this headline">¶</a></dt>
-<dd class="field-even"><p>The robustness of the input state.</p>
+<dd class="field-even"><p>Robustness of coherence <span class="math notranslate nohighlight">\(C_R(\rho) \ge 0\)</span>.</p>
 </dd>
 <dt class="field-odd" id="Coherence.RobustnessCoherentState-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#Coherence.RobustnessCoherentState-return-type" title="Permalink to this headline">¶</a></dt>
 <dd class="field-odd"><p>C_R (numeric)</p>
@@ -1013,34 +1012,30 @@ Quantum, 2, 100.</p>
 <p class="admonition-title">Note</p>
 <p>Napoli, C., Bromley, T. R., Cianciaruso, M., Piani, M., Johnston, N., &amp; Adesso, G. (2016).
 Robustness of coherence: an operational and observable measure of quantum coherence.
-Physical review letters, 116(15), 150502.</p>
+Physical Review Letters, 116(15), 150502.</p>
 </div>
 </dd></dl>
 
 <dl class="mat function objdesc">
 <dt class="sig sig-object highlight sig-wrap mat" id="Coherence.SimulateCoherentChannel">
 <span class="sig-prename descclassname"><span class="pre">Coherence.</span></span><span class="sig-name descname"><span class="pre">SimulateCoherentChannel</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">target_channel</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">resource_state</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">free_op</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">varargin</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Coherence.SimulateCoherentChannel" title="Link to this definition">¶</a></dt>
-<dd><p>Find the optimal free operation <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> to minimize
-diamond norm between the simulated channel
-<span class="math notranslate nohighlight">\(\mathcal{M}(\omega\otimes\cdot)\)</span> and the target channel
-<span class="math notranslate nohighlight">\(\mathcal{N}\)</span></p>
+<dd><p>Find the optimal free operation <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> that minimizes the
+diamond-norm distance between the simulated channel <span class="math notranslate nohighlight">\(\mathcal{M}(\omega \otimes \cdot)\)</span>
+and the target channel <span class="math notranslate nohighlight">\(\mathcal{N}\)</span>.</p>
 <div class="math notranslate nohighlight">
-\[\| \mathcal{M}(\omega \otimes \cdot) - \mathcal{N}\|_\diamond,\]</div>
-<p>where <span class="math notranslate nohighlight">\(\omega\)</span> is the given resource state.</p>
+\[\min_{\mathcal{M}}\; \bigl\| \mathcal{M}(\omega \otimes \cdot) - \mathcal{N} \bigr\|_\diamond\]</div>
+<p>where <span class="math notranslate nohighlight">\(\omega\)</span> is the provided resource state.</p>
 <dl class="field-list simple">
 <dt class="field-odd" id="Coherence.SimulateCoherentChannel-parameters">Parameters<span class="colon">:</span><a class="headerlink" href="#Coherence.SimulateCoherentChannel-parameters" title="Permalink to this headline">¶</a></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>target_channel</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">matrix</span></code></span>) – The Choi matrix of the input channel <span class="math notranslate nohighlight">\(\mathcal{N}\)</span>.</p></li>
-<li><p><strong>reousrce_state</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">matrix</span></code></span>) – The density matrix of the given resource
-state <span class="math notranslate nohighlight">\(\omega\)</span>.</p></li>
-<li><p><strong>free_op</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – The choice of free operation
-<span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, we can choose 0 (MIO) or 1 (DIO).</p></li>
-<li><p><strong>varargin</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">list</span></code></span>) – Dimension of the given channel, default to
-[d_i,d_o], with d_i=d_o.</p></li>
+<li><p><strong>target_channel</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">matrix</span></code></span>) – Choi matrix <span class="math notranslate nohighlight">\(J_\mathcal{N} \in \mathbb{C}^{(d_i d_o)\times(d_i d_o)}\)</span> of the target channel <span class="math notranslate nohighlight">\(\mathcal{N}\)</span>.</p></li>
+<li><p><strong>resource_state</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">matrix</span></code></span>) – Density matrix <span class="math notranslate nohighlight">\(\omega \in \mathbb{C}^{d_r\times d_r}\)</span> of the resource state.</p></li>
+<li><p><strong>free_op</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – Choice of free operation <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>; <cite>0</cite> for MIO, <cite>1</cite> for DIO.</p></li>
+<li><p><strong>varargin</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">list</span></code></span>) – Channel dimensions, default <cite>[d_i, d_o]</cite> with <cite>d_i = d_o = sqrt{text{size}(J_mathcal{N},1)}</cite>.</p></li>
 </ul>
 </dd>
 <dt class="field-even" id="Coherence.SimulateCoherentChannel-returns">Returns<span class="colon">:</span><a class="headerlink" href="#Coherence.SimulateCoherentChannel-returns" title="Permalink to this headline">¶</a></dt>
-<dd class="field-even"><p>The diamond norm between the simulated channel and the target channel.</p>
+<dd class="field-even"><p>Diamond-norm distance between the simulated channel and the target channel.</p>
 </dd>
 <dt class="field-odd" id="Coherence.SimulateCoherentChannel-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#Coherence.SimulateCoherentChannel-return-type" title="Permalink to this headline">¶</a></dt>
 <dd class="field-odd"><p>distance (numeric)</p>
@@ -1057,29 +1052,27 @@ Quantum, 2, 100.</p>
 <dl class="mat function objdesc">
 <dt class="sig sig-object highlight sig-wrap mat" id="Coherence.SimulateCoherentChannelProb">
 <span class="sig-prename descclassname"><span class="pre">Coherence.</span></span><span class="sig-name descname"><span class="pre">SimulateCoherentChannelProb</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">target_channel</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">resource_state</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">free_op</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">error_tolerance</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">varargin</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Coherence.SimulateCoherentChannelProb" title="Link to this definition">¶</a></dt>
-<dd><p>Find the maximally success probability <span class="math notranslate nohighlight">\(p\)</span> to simulate the target channel
-simulation with free operations <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> and resource state
-<span class="math notranslate nohighlight">\(\omega\)</span> up to error tolerance <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
+<dd><p>Find the maximal success probability <span class="math notranslate nohighlight">\(p\)</span> to simulate the target channel
+using free operations <span class="math notranslate nohighlight">\(\mathcal{M}\)</span> and a resource state <span class="math notranslate nohighlight">\(\omega\)</span>,
+up to an allowed diamond-norm error <span class="math notranslate nohighlight">\(\epsilon\)</span>.</p>
 <div class="math notranslate nohighlight">
-\[\max_{\mathcal{M}} \{p| \mathcal{M}(\sigma\otimes\cdot)=p\mathcal{L}(\cdot)
-+ (1-p)\mathcal{R}(\cdot), \|\mathcal{L} - \mathcal{N}\|\le \epsilon\}\]</div>
-<p>where <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> is a rubbish channel.</p>
+\[\max_{\mathcal{M}} \left\{ p \;\middle|\; \mathcal{M}(\omega \otimes \cdot)
+= p\,\mathcal{L}(\cdot) + (1-p)\,\mathcal{R}(\cdot),\;
+\|\mathcal{L} - \mathcal{N}\|_\diamond \le \epsilon \right\}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\mathcal{N}\)</span> is the target channel, <span class="math notranslate nohighlight">\(\mathcal{L}\)</span> is the implemented channel,
+and <span class="math notranslate nohighlight">\(\mathcal{R}\)</span> is an arbitrary CPTP “rubbish” channel.</p>
 <dl class="field-list simple">
 <dt class="field-odd" id="Coherence.SimulateCoherentChannelProb-parameters">Parameters<span class="colon">:</span><a class="headerlink" href="#Coherence.SimulateCoherentChannelProb-parameters" title="Permalink to this headline">¶</a></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>target_channel</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">matrix</span></code></span>) – The Choi matrix of the input channel <span class="math notranslate nohighlight">\(\mathcal{N}\)</span>.</p></li>
-<li><p><strong>reousrce_state</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">matrix</span></code></span>) – The density matrix of the given resource
-state <span class="math notranslate nohighlight">\(\omega\)</span>.</p></li>
-<li><p><strong>free_op</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – The choice of free operation
-<span class="math notranslate nohighlight">\(\mathcal{M}\)</span>, we can choose <cite>0</cite> (MIO) or <cite>1</cite> (DIO).</p></li>
-<li><p><strong>error_tolerance</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – The maximal simulation error allowed.</p></li>
-<li><p><strong>varargin</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">list</span></code></span>) – Dimension of the given channel, default to
-<cite>[d_i,d_o]</cite>, with <cite>d_i=d_o</cite>.</p></li>
+<li><p><strong>target_channel</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">matrix</span></code></span>) – Choi matrix <span class="math notranslate nohighlight">\(J_\mathcal{N} \in \mathbb{C}^{(d_i d_o)\times(d_i d_o)}\)</span> of the target channel <span class="math notranslate nohighlight">\(\mathcal{N}\)</span>.</p></li>
+<li><p><strong>resource_state</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">matrix</span></code></span>) – Density matrix <span class="math notranslate nohighlight">\(\omega \in \mathbb{C}^{d_r\times d_r}\)</span> of the given resource state.</p></li>
+<li><p><strong>free_op</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – Choice of free operation <span class="math notranslate nohighlight">\(\mathcal{M}\)</span>; <cite>0</cite> for MIO, <cite>1</cite> for DIO.</p></li>
+<li><p><strong>error_tolerance</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – Allowed error <span class="math notranslate nohighlight">\(\epsilon \ge 0\)</span> measured in diamond norm.</p></li>
+<li><p><strong>varargin</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">list</span></code></span>) – Channel dimensions, default <cite>[d_i, d_o]</cite> with <cite>d_i = d_o = sqrt{text{size}(J_mathcal{N},1)}</cite>.</p></li>
 </ul>
 </dd>
 <dt class="field-even" id="Coherence.SimulateCoherentChannelProb-returns">Returns<span class="colon">:</span><a class="headerlink" href="#Coherence.SimulateCoherentChannelProb-returns" title="Permalink to this headline">¶</a></dt>
-<dd class="field-even"><p>The maximally success probability of channel
-simulation.</p>
+<dd class="field-even"><p>Maximal success probability <span class="math notranslate nohighlight">\(p \in [0,1]\)</span> for the simulation.</p>
 </dd>
 <dt class="field-odd" id="Coherence.SimulateCoherentChannelProb-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#Coherence.SimulateCoherentChannelProb-return-type" title="Permalink to this headline">¶</a></dt>
 <dd class="field-odd"><p>probability (numeric)</p>
