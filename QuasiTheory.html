@@ -1048,17 +1048,18 @@ arXiv preprint arXiv:2404.03619. Accept in PhysRevA.111.012433</p>
 <dl class="mat function objdesc">
 <dt class="sig sig-object highlight mat" id="QuasiTheory.VirtualRecovery">
 <span class="sig-prename descclassname"><span class="pre">QuasiTheory.</span></span><span class="sig-name descname"><span class="pre">VirtualRecovery</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">rho</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">dim</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#QuasiTheory.VirtualRecovery" title="Link to this definition">¶</a></dt>
-<dd><div class="math notranslate nohighlight">
+<dd><p>Compute the virtual recovery measure of a tripartite state <span class="math notranslate nohighlight">\(\rho_{ABC}\)</span>.</p>
+<div class="math notranslate nohighlight">
 \[R^v_{rec}(\rho_{ABC}) = \log\min\{c_1+c_2:(c_1\mathcal{N}_1 - c_2\mathcal{N}_2)(\rho_{AB}) = \rho_{ABC}, c_{1,2}\geq 0, \mathcal{N}_{1,2}\in\operatorname{CPTP}(B,B\otimes C)\}\]</div>
 <dl class="field-list simple">
 <dt class="field-odd" id="QuasiTheory.VirtualRecovery-parameters">Parameters<span class="colon">:</span><a class="headerlink" href="#QuasiTheory.VirtualRecovery-parameters" title="Permalink to this headline">¶</a></dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>JN</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – The Choi matrix of the bipartite channel.</p></li>
-<li><p><strong>dim</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – The array storing input and output dimensions.</p></li>
+<li><p><strong>rho</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – The density matrix of the tripartite state <span class="math notranslate nohighlight">\(\rho_{ABC}\)</span>.</p></li>
+<li><p><strong>dim</strong> (<span><code class="xref mat mat-obj docutils literal notranslate"><span class="pre">numeric</span></code></span>) – Dimension array <span class="math notranslate nohighlight">\([d_A, d_B, d_C]\)</span> for subsystems <span class="math notranslate nohighlight">\(A,B,C\)</span>.</p></li>
 </ul>
 </dd>
 <dt class="field-even" id="QuasiTheory.VirtualRecovery-returns">Returns<span class="colon">:</span><a class="headerlink" href="#QuasiTheory.VirtualRecovery-returns" title="Permalink to this headline">¶</a></dt>
-<dd class="field-even"><p>The virtual recovery of tripartite state.</p>
+<dd class="field-even"><p>The virtual recovery of the tripartite state (in bits).</p>
 </dd>
 <dt class="field-odd" id="QuasiTheory.VirtualRecovery-return-type">Return type<span class="colon">:</span><a class="headerlink" href="#QuasiTheory.VirtualRecovery-return-type" title="Permalink to this headline">¶</a></dt>
 <dd class="field-odd"><p>numeric</p>
@@ -1071,7 +1072,7 @@ arXiv preprint arXiv:2404.03619. Accept in PhysRevA.111.012433</p>
 <p class="admonition-title">Note</p>
 <p>Chen, Y. A., Zhu, C., He, K., Jing, M., &amp; Wang, X. (2023).
 Virtual Quantum Markov Chains.
-arXiv preprint arXiv:2312.02031. Accept in IEEE TIT.</p>
+arXiv preprint arXiv:2312.02031. Accepted to IEEE Transactions on Information Theory.</p>
 </div>
 </dd></dl>
 
