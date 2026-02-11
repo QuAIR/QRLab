@@ -605,12 +605,58 @@
   
   
     <li class="md-nav__item">
+      <a href="examples.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>examples</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="seesaw.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     <span>seesaw</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tests.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>tests</span>
     
   </span>
   
@@ -941,10 +987,14 @@
 <dl class="mat function objdesc">
 <dt class="sig sig-object highlight mat" id="Coherence.FlagPoleState">
 <span class="sig-prename descclassname"><span class="pre">Coherence.</span></span><span class="sig-name descname"><span class="pre">FlagPoleState</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">dim</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">p</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Coherence.FlagPoleState" title="Link to this definition">¶</a></dt>
-<dd><p>Construct a flag-pole state in the computational basis.</p>
+<dd><dl>
+<dt>FLAGPOLESTATE Construct a flag-pole pure state density matrix.</dt><dd><p>STATE = FLAGPOLESTATE(DIM, P) returns the density matrix
+<a href="#id1"><span class="problematic" id="id2">|psi&gt;&lt;psi|</span></a> where</p>
 <div class="math notranslate nohighlight">
 \[\ket{\psi} = \sqrt{p}\,\ket{0} + \sum_{i=1}^{d-1} \sqrt{\frac{1-p}{d-1}}\,\ket{i},\]</div>
 <p>so that <span class="math notranslate nohighlight">\(\rho = \ket{\psi}\!\bra{\psi}\)</span> is a pure state.</p>
+</dd>
+</dl>
 <dl class="field-list simple">
 <dt class="field-odd" id="Coherence.FlagPoleState-parameters">Parameters<span class="colon">:</span><a class="headerlink" href="#Coherence.FlagPoleState-parameters" title="Permalink to this headline">¶</a></dt>
 <dd class="field-odd"><ul class="simple">
@@ -1125,7 +1175,7 @@ arXiv preprint arXiv:2404.06775.</p>
   
     Created using
     <a href="https://www.sphinx-doc.org/" target="_blank" rel="noopener">Sphinx</a>
-    8.2.3.
+    9.1.0.
      and
     <a href="https://github.com/jbms/sphinx-immaterial/" target="_blank" rel="noopener">Sphinx-Immaterial</a>
   

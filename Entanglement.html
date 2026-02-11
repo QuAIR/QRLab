@@ -530,12 +530,58 @@
   
   
     <li class="md-nav__item">
+      <a href="examples.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>examples</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="seesaw.html" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     <span>seesaw</span>
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tests.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    <span>tests</span>
     
   </span>
   
@@ -652,9 +698,10 @@
 <dt class="sig sig-object highlight mat" id="Entanglement.compute_entanglement_measures">
 <span class="sig-prename descclassname"><span class="pre">Entanglement.</span></span><span class="sig-name descname"><span class="pre">compute_entanglement_measures</span></span><span class="sig-paren">(</span><span class="sig-param-decl"><em class="sig-param"><span class="pre">rho_in</span></em>, </span><span class="sig-param-decl"><em class="sig-param"><span class="pre">opts</span></em></span><span class="sig-paren">)</span><a class="headerlink" href="#Entanglement.compute_entanglement_measures" title="Link to this definition">¶</a></dt>
 <dd><dl>
-<dt>COMPUTE_ENTANGLEMENT_MEASURES</dt><dd><p>Dispatcher for common entanglement measures. Supports selective
-evaluation, custom extensions, basic preprocessing (Hermitization and
-trace normalization), and optional tabular output.</p>
+<dt>COMPUTE_ENTANGLEMENT_MEASURES Evaluate selected entanglement measures.</dt><dd><p>RESULT = COMPUTE_ENTANGLEMENT_MEASURES(RHO_IN) evaluates default
+measures for a bipartite state matrix.</p>
+<p>RESULT = COMPUTE_ENTANGLEMENT_MEASURES(RHO_IN, OPTS) allows control of
+dimensions, selected measures, preprocessing behavior, and output type.</p>
 </dd>
 <dt>Inputs:</dt><dd><p>rho_in : Density matrix (state) or channel Choi matrix.
 opts   : struct with optional fields:</p>
@@ -719,7 +766,7 @@ opts   : struct with optional fields:</p>
   
     Created using
     <a href="https://www.sphinx-doc.org/" target="_blank" rel="noopener">Sphinx</a>
-    8.2.3.
+    9.1.0.
      and
     <a href="https://github.com/jbms/sphinx-immaterial/" target="_blank" rel="noopener">Sphinx-Immaterial</a>
   

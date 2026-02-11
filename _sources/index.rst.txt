@@ -14,6 +14,8 @@ Welcome to QRLab's documentation!
    Magic
    QuasiTheory
    Supermap
+   examples
    seesaw
+   tests
    tutorials
    utils
